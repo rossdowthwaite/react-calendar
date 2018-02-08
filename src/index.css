@@ -5,148 +5,52 @@ body {
   background-color: #2C3E50;
 }
 
-.calendar {
-  width: 60%;
-  min-width: 430px;
-  margin: auto;
-  background-color: #E5E8E8;
-  border: Solid 4px #FFF;
-  margin-top: 50px;
+@charset "UTF-8";
+
+@font-face {
+  font-family: "calendar-icons";
+  src:url("assets/fonts/calendar-icons.eot");
+  src:url("assets/fonts/calendar-icons.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/calendar-icons.woff") format("woff"),
+    url("assets/fonts/calendar-icons.ttf") format("truetype"),
+    url("assets/fonts/calendar-icons.svg#calendar-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-  .calendar__header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #E5E8E8;
-  }
+[data-icon]:before {
+  font-family: "calendar-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .calendar__day-titles {
-    display: flex;
-    justify-content: space-between;
-    background-color: #2471A3;
-  }
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "calendar-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .calendar__day-title {
-    text-align: center;
-    color: #FFF;
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 10px;
-    min-width: 60px;
-  }
-
-  .calendar__day-titles > span {
-    text-align: center;
-    color: #FFF;
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 10px;
-    min-width: 60px;
-  }
-
-  .select-wrapper {
-    padding: 20px;
-    display: flex;
-  }
-
-  .navigation {
-    padding: 20px 20px 14px 20px;
-    cursor: pointer;
-    font-size: 25px;
-  }
-
-  .calendar__week {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .calendar__day {
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 10px;
-    min-width: 60px;
-    height: 80px;
-    color: #606268;
-  }
-
-  .calendar__day--dulled {
-    background-color: #A6ACAF;
-  }
-
-  .icon {
-    display: block;
-    width:40px;
-    height:40px;
-  }
-
-  .input {
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: block;
-    margin: auto;
-    border: none;
-    padding-right: 12px;
-    margin-right: 15px;
-    background: url("./assets/images/select-arrow.png") no-repeat scroll 0 0 transparent;
-    background-position: center right;
-    background-size: auto;
-  }
-
-  .border {
-    box-sizing: border-box;
-    border: Solid 1px white;
-  }
-
-  @charset "UTF-8";
-
-  @font-face {
-    font-family: "calendar-icons";
-    src:url("assets/fonts/calendar-icons.eot");
-    src:url("assets/fonts/calendar-icons.eot?#iefix") format("embedded-opentype"),
-      url("assets/fonts/calendar-icons.woff") format("woff"),
-      url("assets/fonts/calendar-icons.ttf") format("truetype"),
-      url("assets/fonts/calendar-icons.svg#calendar-icons") format("svg");
-    font-weight: normal;
-    font-style: normal;
-
-  }
-
-  [data-icon]:before {
-    font-family: "calendar-icons" !important;
-    content: attr(data-icon);
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  [class^="icon-"]:before,
-  [class*=" icon-"]:before {
-    font-family: "calendar-icons" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .icon-caret-down:before {
-    content: "\75";
-  }
-  .icon-chevron-right:before {
-    content: "\76";
-  }
-  .icon-chevron-left:before {
-    content: "\77";
-  }
+.icon-caret-down:before {
+  content: "\75";
+}
+.icon-chevron-right:before {
+  content: "\76";
+}
+.icon-chevron-left:before {
+  content: "\77";
+}

@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Day from './Day'
+import styled from 'styled-components';
+
+const WeekWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 class Week extends Component {
   render() {
@@ -16,9 +22,9 @@ class Week extends Component {
       date.add(1, "day");
     }
     return(
-      <div className="calendar__week">
+      <WeekWrapper>
         { days }
-      </div>
+      </WeekWrapper>
     )
   }
 }
