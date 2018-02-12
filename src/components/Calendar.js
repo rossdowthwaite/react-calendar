@@ -13,7 +13,7 @@ const CalendarWrapper = styled.div`
   margin: auto;
   background-color: #E5E8E8;
   border: Solid 4px #FFF;
-  margin-top: 50px;
+  margin-top: 20px;
 `;
 
 const CalendarHeader = styled.div`
@@ -22,18 +22,22 @@ const CalendarHeader = styled.div`
   background-color: #E5E8E8;
   box-sizing: border-box;
   border: Solid 1px white;
-`
+`;
 
 const SelectionWrapper = styled.div`
   padding: 20px;
   display: flex;
-`
+`;
+
 const Navigation = styled.div`
   padding: 20px 20px 14px 20px;
   cursor: pointer;
   font-size: 25px;
 `;
 
+/**
+ *  Calendar component class
+ */
 class Calendar extends Component {
   state = {
     currentDate: moment()
@@ -43,29 +47,26 @@ class Calendar extends Component {
     const url = this.props.match.url
     const currentDate = url === '/' ? moment() : moment().month( url.substr(1) )
 
-    this.setState( () => ({
+    this.setState({
       currentDate,
-    }))
+    })
 
     this.updateURL( currentDate )
   }
 
-
-  handleMonthSelect = (evt) => {
-    console.log(evt.target);
+  handleMonthSelect = (e) => {
     const { currentDate } = this.state
-    const newDate = currentDate.clone().month(evt.target.value)
+    const newDate = currentDate.clone().month(e.target.value)
 
     this.setState({
       currentDate: newDate,
     })
-
     this.updateURL( newDate )
   }
 
-  handleYearSelect = (evt) => {
+  handleYearSelect = (e) => {
     const { currentDate } = this.state
-    const newDate = currentDate.clone().year(evt.target.value)
+    const newDate = currentDate.clone().year(e.target.value)
 
     this.setState({
       currentDate: newDate,
@@ -79,7 +80,7 @@ class Calendar extends Component {
     this.setState({
       currentDate: newDate
     })
-    this.updateURL( currentDate )
+    this.updateURL(newDate)
   }
 
   previous = () => {
@@ -92,11 +93,11 @@ class Calendar extends Component {
     this.updateURL( currentDate )
   }
 
-  updateURL = ( date ) => {
+  updateURL = (date) => {
     this.props.history.push('/' + date.format('MMMM'))
   }
 
-  renderWeeks() {
+  weeks() {
     const { currentDate } = this.state
     let completeMonth = false;
     let weeks = [];
@@ -127,7 +128,7 @@ class Calendar extends Component {
           <Navigation className="icon-chevron-right" onClick={this.next} />
         </CalendarHeader>
         <DayTitles />
-        { this.renderWeeks() }
+        { this.weeks() }
       </CalendarWrapper>
     )
   }

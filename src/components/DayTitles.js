@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const DayTitlesWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #2471A3;
+  background-color: #5D6D7E;
 `;
 
 const DayTitle = styled.span`
@@ -18,7 +18,7 @@ const DayTitle = styled.span`
   border: Solid 1px white;
 `;
 
-export default function DayTitles (props) {
+export default function DayTitles () {
   const days = ['SUN','MON','TUE', 'WED', 'THU', 'FRI', 'SAT']
   return (
     <DayTitlesWrapper>

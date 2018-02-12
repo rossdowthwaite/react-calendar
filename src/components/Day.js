@@ -14,14 +14,15 @@ const DayWrapper = styled.div`
   background-color: ${props => props.current ? '#D5DBDB' : '#99A3A4' };
 `;
 
+Day.propTypes = {
+  day: PropTypes.object.isRequired,
+  inCurrentMonth: PropTypes.bool.isRequired
+}
+
 export default function Day ({day, inCurrentMonth}) {
   return (
     <DayWrapper current={inCurrentMonth}>
       { day.date() }
     </DayWrapper>
   )
-}
-
-Day.propTypes = {
-  day: PropTypes.object.isRequired
 }

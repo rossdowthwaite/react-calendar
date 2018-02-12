@@ -9,6 +9,12 @@ const WeekWrapper = styled.div`
 `;
 
 class Week extends Component {
+
+  static propTypes = {
+    date: PropTypes.object.isRequired,
+    currentDate: PropTypes.object.isRequired
+  }
+
   render() {
     let days = []
     let { date } = this.props;
@@ -16,6 +22,7 @@ class Week extends Component {
 
     while (days.length < 7) {
       let inCurrentMonth = date.month() === currentDate.month()
+
       days.push(<Day key={date + days.length} day={ date } inCurrentMonth={ inCurrentMonth }/>)
 
       date = date.clone();
@@ -27,11 +34,6 @@ class Week extends Component {
       </WeekWrapper>
     )
   }
-}
-
-Week.propTypes = {
-  date: PropTypes.object.isRequired,
-  currentDate: PropTypes.object.isRequired
 }
 
 export default Week

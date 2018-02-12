@@ -19,7 +19,13 @@ const YearSelector = styled.select`
   background: url(${img}) no-repeat scroll 0 0 transparent;
   background-position: center right;
   background-size: auto;
+  cursor: pointer;
 `
+
+SelectMonth.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  currentMonth: PropTypes.object.isRequired,
+}
 
 export default function SelectMonth ({onChange, currentMonth }) {
   const months = moment.months();
@@ -39,8 +45,4 @@ export default function SelectMonth ({onChange, currentMonth }) {
       </YearSelector>
     </div>
   )
-}
-
-SelectMonth.propTypes = {
-  onChange: PropTypes.func.isRequired,
 }
